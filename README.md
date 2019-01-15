@@ -1,11 +1,15 @@
-## Thorntail seed project (Work In Progress)
+# Thorntail seed project (Work In Progress)
+## The objective is to have an **production ready** projected to be copied
+## Running
+```bash
+mvn thorntail:run
+```
 
-### This project should be the base project to new thorntail projects
+## Features
+- [X] [Flyway](#Flyway)
+- [X] [Datasource](#Datasource)
 
-### The objective is to have an **production ready** projected to be copied
-
-[X] Flyway
-[X] Datasource
-
-#### Flyway handle with database migrations
-#### Datasource handle the configuration of databases which the application uses
+### Flyway
+Handle with database migrations
+### Datasource
+Handle the configuration of databases which the application uses
