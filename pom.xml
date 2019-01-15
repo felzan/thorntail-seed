@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.thorntail</groupId>
+  <artifactId>seed</artifactId>
+  <name>Thorntail Seed</name>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <version.thorntail>2.2.1.Final</version.thorntail>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <version.mysql>5.1.38</version.mysql>
+  </properties>
+
+  <dependencies>
+
+    <!-- JaxRS -->
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>jaxrs</artifactId>
+      <version>${version.thorntail}</version>
+    </dependency>
+
+    <!-- datasources -->
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>datasources</artifactId>
+      <version>${version.thorntail}</version>
+    </dependency>
+    
+    <!-- Flyway -->
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>flyway</artifactId>
+      <version>${version.thorntail}</version>
+    </dependency>
+
+    <!-- MySQL -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${version.mysql}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>thorntail-seed</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <version>${version.thorntail}</version>
+        
+        <executions>
+          <execution>
+            <id>package</id>
+          </execution>
+          <execution>
+            <id>start</id>
+          </execution>
+          <execution>
+            <id>stop</id>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

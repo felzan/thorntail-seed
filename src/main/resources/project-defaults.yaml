@@ -1,0 +1,12 @@
+swarm:
+  datasources:
+    data-sources:
+      thorntail:
+        driver-name: mysql
+        connection-url: jdbc:mysql://localhost:3306?useSSL=false&autoReconnect=true
+        user-name: root
+        password: root
+  flyway:
+    jdbc-url: jdbc:mysql://localhost:3306/thorntail
+    jdbc-password: root
+    jdbc-user: root
